@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{% endblock title %}</title>
+	<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style>
+	/** 
+	  *	Font Family used: San Francisco Pro Display Family
+	  *	Developer: Apple Inc.
+	  *	Downloaded from: onlinewebfonts.com
+	  **/
+	@font-face {font-family: "sfreg"; font-style: normal; src: url('{% static "fonts/sfreg.ttf" %}') format("truetype");}
+	@font-face {font-family: "sfmed"; font-style: normal; src: url('{% static "fonts/sfmed.ttf" %}') format("truetype");}
+	@font-face {font-family: "sflite"; font-style: normal; src: url('{% static "fonts/sflite.ttf" %}') format("truetype");}
+	* { font-family: sfreg; }
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6,
+	em, b { font-family: sfmed !important; }
+	td.center { text-align: center; }
+	p.center, h1.center, h2.center, h3.center, h4.center, h5.center, h6.center {text-align: center;}
+	table.center { margin: 0 auto; }
+	div.center { text-align: center; }
+	.table-layout {
+		/*border: 1px solid black;*/
+		border: 0;
+		border-collapse: collapse;
+	}
+	td.t-label {
+		width: 8vw;
+		overflow: hidden;
+	}
+	u {	font-family: inherit; 0}
+	.table-layout td {
+		padding: 8px;
+	}
+	.form-control { border: 1px solid #7C8594 !important; }
+	.thin { font-family: sflite !important; }
+	.italic { font-style: italic; }
+	{% block style %}
+	{% endblock style %}
+	</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<a class="navbar-brand" href="/">Atharva Kale</a>
+	<div class="mx-3"></div>
+	<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			<li class="nav-item" id="home">
+				<a class="nav-link" href="/">Home</a>
+			</li>
+			<li class="nav-item" id="sqlite">
+				<a class="nav-link" href="/sqlite">SQLite</a>
+			</li>
+			<!--<li class="nav-item">
+				<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+			</li>-->
+		</ul>
+	</div>
+</nav>
+{% block body %}
+{% endblock body %}
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+{% block script %}
+{% endblock script %}
+</body>
+</html>

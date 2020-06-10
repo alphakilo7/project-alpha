@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Login &bullet; Project Alpha{% endblock title %}
+
+{% block body %}
+<div class="container">
+	<div class="my-4"></div>
+	<h1 class="center">Project Alpha</h1>
+	<h5 class="center thin">Please Login to Continue</h5>
+	<br/><br/>
+	<form method="POST" action="/" autocomplete="off">
+		{% csrf_token %}
+		<table class="table-layout center">
+			<tr>
+				<td class="t-label">Username</td>
+				<td class="mx-2"></td>
+				<td>
+					<input type="text" name="username" id="uname" class="form-control" required>
+				</td>
+			</tr>
+			<tr>
+				<td class="t-label">Password</td>
+				<td class="mx-2"></td>
+				<td>
+					<input type="password" name="password" id="pword" class="form-control" required>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" class="center">
+					<input type="submit" name="reg_submit" class="btn btn-success" value="Login">
+				<td>
+			</tr>
+			<tr>
+				<td colspan="3" class="center">
+					New to Project Alpha? <a href="/sqlite?page=register" class="italic">Register Here!</a>
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+{% endblock body %}
+
+{% block script %}
+<script>
+	$("#home").removeClass('active');
+	$("#sqlite").addClass('active');
+</script>
+{% endblock script %}

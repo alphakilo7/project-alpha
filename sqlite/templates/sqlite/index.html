@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Project &bullet; Alpha{% endblock title %}
+
+{% block body %}
+
+<div class="container">
+	<div class="my-4"></div>
+	<h1 class="center">Project Alpha</h1>
+	<br/>
+	<h4 class="center">Project Alpha is an <u>Intelligence Collaboration</u> Project</h4>
+	<br/><br/>
+	<div class="center" id="btn-holder">
+		<a href="/sqlite?page=login"><button class="btn btn-primary" style="width: 8rem;">Login</button></a>
+		<a href="/sqlite?page=register"><button class="btn btn-info" style="width: 8rem;">Register</button></a>
+	</div>
+</div>
+
+{% endblock body %}
+
+{% block script %}
+<script>
+	$('#home').removeClass('active');
+    $('#sqlite').addClass('active');
+</script>
+{% endblock script %}

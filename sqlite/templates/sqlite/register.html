@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}Register &bullet; Project {% endblock title %}
+
+{% block style %}
+	/* stylesheet */
+{% endblock style %}
+
+{% block body %}
+
+<div class="container">
+	<div class="my-4"></div>
+	<h1 class="center">Project Alpha</h1>
+	<h5 class="center thin">Welcome! Register to Project Alpha</h5>
+	<br/>
+	<form method="POST" action="/sqlite/?page=reg" autocomplete="off">
+		{% csrf_token %}
+		<table class="table-layout center">
+			<tr>
+				<td class="t-label">First Name</td>
+				<td class="mx-2"></td>
+				<td>
+					<input type="text" name="first_name" id="fname" class="form-control" required>
+				</td>
+			</tr>
+			<tr>
+				<td class="t-label">Last Name</td>
+				<td class="mx-2"></td>
+				<td>
+					<input type="text" name="last_name" id="lname" class="form-control">
+				</td>
+			</tr>
+			<tr>
+				<td class="t-label">Email</td>
+				<td class="mx-2"></td>
+				<td>
+					<input type="email" name="email_addr" id="eml" class="form-control" required>
+				</td>
+			</tr>
+			<tr>
+				<td class="t-label">Username</td>
+				<td class="mx-2"></td>
+				<td>
+					<input type="text" name="username" id="uname" class="form-control" required>
+				</td>
+			</tr>
+			<tr>
+				<td class="t-label">Password</td>
+				<td class="mx-2"></td>
+				<td>
+					<input type="password" name="password" id="pword" class="form-control" required>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" class="center">
+					<input type="submit" name="reg_submit" class="btn btn-success" value="Register">
+					<input type="reset" name="reg_reset" class="btn btn-danger" value="Reset">
+				<td>
+			</tr>
+			<tr>
+				<td colspan="3" class="center">
+					Already registered? <a href="/sqlite?page=login" class="italic" id=>Login Here!</a>
+				</td>
+			</tr>
+		</table>
+		<input type="hidden" name="form-action" value="registration">
+	</form>
+</div>
+{% block script %}
+<script>
+	$('#home').removeClass('active');
+	$('#sqlite').addClass('active');
+</script>
+{% endblock script %}
+{% endblock body %}
